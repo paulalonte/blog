@@ -1,0 +1,72 @@
+@import '../scss/variables';
+@import '../scss/buttons';
+
+$input-width: 100%;
+
+%border-radius {
+    border-radius: $border-radius;
+}
+
+.add-form-page {
+    padding: $gap;    
+}
+
+form {
+    position: relative;
+
+    section {
+        padding: 10px 0;
+
+        .error {
+            font-style: italic;
+            color: red;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 1.4em;
+        }
+        
+        input {
+            width: $input-width;
+            height: 40px;
+            font-size: 1.2em;
+            box-sizing: border-box;
+            padding: 0 10px;
+            @extend %border-radius;
+            border: 1px solid #999;
+        }
+
+        textarea {
+            width: $input-width;
+            height: 120px;
+            font-size: 1.2em;
+            box-sizing: border-box;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            padding: 10px;
+            @extend %border-radius;
+            border: 1px solid #999;
+        }
+
+        .ng-invalid.ng-touched {
+            border: 1px solid red;
+        }
+    }
+
+    button {
+        margin-top: 10px;
+        margin-left: 0 !important;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transform: translateY(100%);
+        border-radius: 6px;
+    }
+    
+}
+
+
+
+
+

@@ -1,0 +1,18 @@
+@import 'variables';
+
+.button-primary {
+    border: none;
+    padding: 15px;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover:enabled {
+        background: $darkbg;
+        color: #fff;
+    }
+}
+
+.fa {
+    cursor: pointer !important
+}

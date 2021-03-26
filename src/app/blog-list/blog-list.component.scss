@@ -1,0 +1,65 @@
+@import '../scss/variables';
+@import '../scss/buttons';
+
+%border-radius {
+    border-radius: $border-radius;
+}
+
+.red {
+    color: red;
+}
+
+.default {
+    color: black;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 $gap;
+}
+
+.list {
+    background: #fff;
+    margin-top: 20px;
+
+    section {
+
+        h3, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        padding: 20px $gap;
+        margin-bottom: 2px;
+        background: $light-primary;
+
+        &:nth-of-type(odd) {
+            background: $mid-tone;
+        }
+    }
+    
+}
+
+.action-button {
+    button {
+        @extend %border-radius;
+    }
+}
+
+.loading {
+    text-align: center;
+}
+
+.status {
+    padding: $gap;
+}
+
+.search {
+    height: 42px;
+    padding: 0 6px;
+    @extend %border-radius;
+    border: 1px solid #999;
+}
+

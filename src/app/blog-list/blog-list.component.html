@@ -1,0 +1,26 @@
+<header>
+    <h1 [ngClass]="{ 'red' : isRed, 'default' : !isRed}">{{title}}</h1>
+
+    <div class="action-button">
+        <input type="text" placeholder="search" class="search" [(ngModel)]="postText"/>
+        <button type="button" (click)="onFetchData()" class="button-primary">Refresh List</button>
+        <button type="button" (click)="onClearPosts()" class="button-primary">Clear Posts</button>
+    </div>
+</header>
+
+<ng-container *ngIf="!isFetching && blogList.length >= 1">
+    <div class="list">
+        <section *ngFor="let list of blogList | filter:postText">
+            <h3>{{list.title}}</h3>
+            <p>{{list.content}}</p>
+        </section>
+    </div>
+    
+</ng-container>
+
+<div class="status">
+    <p *ngIf="isFetching" class="loading">Loading...</p>
+    <ng-container *ngIf="!isFetching">
+        <p *ngIf="blogList.length == 0">No content available!</p>
+    </ng-container>
+</div>
